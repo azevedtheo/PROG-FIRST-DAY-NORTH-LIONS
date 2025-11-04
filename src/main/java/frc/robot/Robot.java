@@ -15,12 +15,20 @@ import frc.robot.Constants.DriveConsts;
 import frc.robot.Constants.OIConsts;
 
 public class Robot extends TimedRobot {
-  private final     WPI_VictorSPX     frontLeftMotor      =new     WPI_VictorSPX(DriveConsts.FRONT_LEFT_MOTOR_ID);
-  private final     WPI_VictorSPX     frontRightMotor     =new     WPI_VictorSPX(DriveConsts.FRONT_RIGHT_MOTOR_ID);
-  private final     WPI_VictorSPX     backLeftMotor       =new     WPI_VictorSPX(DriveConsts.BACK_LEFT_MOTOR_ID);
-  private final     WPI_VictorSPX     backRightMotor      =new     WPI_VictorSPX(DriveConsts.BACK_RIGHT_MOTOR_ID);;
+  private final     WPI_VictorSPX     frontLeftMotor      =  new   WPI_VictorSPX(
+                                                                                  DriveConsts.FRONT_LEFT_MOTOR_ID
+                                                                                  );
+  private final     WPI_VictorSPX     frontRightMotor     =  new   WPI_VictorSPX(
+                                                                                  DriveConsts.FRONT_RIGHT_MOTOR_ID
+                                                                                  );
+  private final     WPI_VictorSPX     backLeftMotor       =  new   WPI_VictorSPX(
+                                                                                  DriveConsts.BACK_LEFT_MOTOR_ID
+                                                                                  );
+  private final     WPI_VictorSPX     backRightMotor      =  new   WPI_VictorSPX(
+                                                                                  DriveConsts.BACK_RIGHT_MOTOR_ID
+                                                                                  );
 
-  Joystick      controller      =new      Joystick(OIConsts.MAIN_CONTROLLER_PORT);
+  Joystick      controller      =  new  Joystick(OIConsts.MAIN_CONTROLLER_PORT);
   
   private Command m_autonomousCommand;
 
@@ -82,9 +90,21 @@ public class Robot extends TimedRobot {
                                               -DriveConsts.MAX_SPEED * 0.6, DriveConsts.MAX_SPEED * 0.6);
 
     double leftSpeed = speedDriveTrain + turnDriveTrain;
-    double rightSpeed = speedDriveTrain - turnDriveTrain; 
     
-    frontLeftMotor.set(leftSpeed);      frontRightMotor.set(leftSpeed);     backLeftMotor.set(-rightSpeed);     backRightMotor.set(-rightSpeed);
+    double rightSpeed = speedDriveTrain - turnDriveTrain; 
+
+    frontLeftMotor.set(
+                        leftSpeed
+                      );
+    frontRightMotor.set(
+                        leftSpeed
+                        );
+    backLeftMotor.set(
+                      - rightSpeed
+                      );
+    backRightMotor.set(
+                      - rightSpeed
+                      );
   }
 
   public void stop() {
