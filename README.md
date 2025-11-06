@@ -10,16 +10,17 @@
 - 1 Battery + Breaker
 - 4 CIM 2.5" motors
 - 4 Victor SPX motor controllers (for CIM motors)
-- 4 NEO Brushless motors
-- 4 SPARKMAX motor controllers (1 per NEO)
+- 2 NEO Brushless motors (Elevator)
+- 2 AndyMark 775 RedLine - No Pinion (Shooter)
+- 4 SPARKMAX motor controllers (2: NEO and 2: AndyMark)
 
 # Coding Parts:
 
 - Subsystems:
-  - Intake
+  - Shooter
   - Elevator
 - Commands:
-  - Intake
+  - Shooter
   - Elevator
 - Constants file
 
